@@ -19,6 +19,7 @@ namespace NationBuilder.Models
             base.OnModelCreating(builder);
         }
         public virtual DbSet<Nation> Nations { get; set; }
+        public virtual DbSet<Map> Maps { get; set; }
         public NationBuilderContext() { }
     }
 }

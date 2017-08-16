@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<NationBuilder.Models.Nation>
+<h2>List of Nations</h2>
+@foreach (var nation in Model)
+{
+    <div>
+        <p>@Html.DisplayFor(n => nation.Name)</p>
+        <p>@Html.DisplayFor(n => nation.GovernmentType)</p>
+        <p>@Html.DisplayFor(n => nation.EconomyType)</p>
+        <p>@Html.DisplayFor(n => nation.Geography)</p>
+        <p>@Html.DisplayFor(n => nation.Name)</p>
+        <p>@Html.DisplayFor(n => nation.Wealth)</p>
+        <p>@Html.DisplayFor(n => nation.Population)</p>
+        <p>@Html.DisplayFor(n => nation.Workers)</p>
+        <p>@Html.DisplayFor(n => nation.Food)</p>
+        <p>@Html.DisplayFor(n => nation.Happiness)</p>
+
+    </div>
+
+
+}

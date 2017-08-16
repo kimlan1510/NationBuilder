@@ -24,9 +24,16 @@ namespace NationBuilder.Controllers
             _db = db;
         }
         public IActionResult Index()
+        {   
+            return View();
+        }
+        //List of Nation
+        [Route("/Nation/ListNations")]
+        public IActionResult ListNation()
         {
             return View(_db.Nations.ToList());
         }
+        //public IActionResult
         [Route("/Nation/Create")]
         public IActionResult Create()
         {
@@ -45,7 +52,7 @@ namespace NationBuilder.Controllers
             newNation.MapId = 1; 
             _db.Nations.Add(newNation);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Game");
         }
     }
 }

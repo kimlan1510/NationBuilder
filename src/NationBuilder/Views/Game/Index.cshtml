@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model NationBuilder.Models.Nation
+<h3>Nation: @Html.DisplayFor(n => n.Name)</h3>
+<ul>
+    <li>Government Type: @Html.DisplayFor(n => n.GovernmentType)</li>
+    <li>Economy: @Html.DisplayFor(n => n.EconomyType)</li>
+    <li>Geography: @Html.DisplayFor(n => n.Geography)</li>
+    <li>Weath: @Html.DisplayFor(n => n.Wealth)</li>
+    <li>Population: @Html.DisplayFor(n => n.Population)</li>
+    <li>Workers: @Html.DisplayFor(n => n.Workers)</li>
+    <li>Food: @Html.DisplayFor(n => n.Food)</li>
+    <li>Happiness: @Html.DisplayFor(n => n.Happiness)</li>
+</ul>

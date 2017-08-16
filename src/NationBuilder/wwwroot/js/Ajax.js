@@ -38,13 +38,26 @@
     });
     //Create Nation
     $('.CreateNation').submit(function (event) {
+        console.log("test");
         event.preventDefault();
         $.ajax({
             url: '/Nation/CreateNation',
             type: 'POST',
             dataType: 'json',
             data: $(this).serialize(),
-            success: function () {   
+            success: function () {
+                var resultMessage = 'Your have created a new nation.';
+                $('#CreateNationMessage').html(resultMessage);
+            }
+        });
+    });
+
+    $('.ListNations').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: '/Nation/ListNations',
+            success: function (result) {
+                $('#ShowAllNations').html(result);
             }
         });
     });

@@ -1,4 +1,8 @@
-﻿@model NationBuilder.Models.Nation
+﻿
+@{
+    ViewData["Title"] = "Create Nation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 
 <form action="Create" class="CreateNation">
@@ -16,7 +20,11 @@
 
 
     <label for="EconomyType">Type of economy </label>
-    <input type="text" name="EconomyType" />
+    <select name="EconomyType">
+        <option value="Capitalist">Capitalist</option>
+        <option value="Socialist">Socialist</option>
+        <option value="Mixed Economy">Mixed Economy</option>
+    </select>
 
     <label for="Geography">Basic Geography </label>
     <select name="Geography">
@@ -30,3 +38,4 @@
     
     <button type="submit">Submit</button>
 </form>
+<div id="CreateNationMessage"></div>
