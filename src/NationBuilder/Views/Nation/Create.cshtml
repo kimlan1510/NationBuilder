@@ -1,0 +1,32 @@
+﻿@model NationBuilder.Models.Nation
+
+
+<form action="Create" class="CreateNation">
+    <label for="Name">Name of your nation</label>
+    <input type="text" name="Name" />
+
+    <label for="GovernmentType">Type of government </label>
+    <select name="GovernmentType">
+        <option value="Monarchy">Monarchy</option>
+        <option value="Communist">Communism</option>
+        <option value="Democracy">Democracy</option>
+        <option value="Oligarchy">Oligarchy</option>
+        <option value="Dictatorship">Dictatorship</option>
+    </select>
+
+
+    <label for="EconomyType">Type of economy </label>
+    <input type="text" name="EconomyType" />
+
+    <label for="Geography">Basic Geography </label>
+    <select name="Geography">
+        <option value="Plateau">Plateau</option>
+        <option value="Island">Island</option>
+        <option value="Coastal Plain">Coastal Plain</option>
+        <option value="Delta">Delta</option>
+        <option value="Forest">Forest</option>
+    </select>
+
+    
+    <button type="submit">Submit</button>
+</form>

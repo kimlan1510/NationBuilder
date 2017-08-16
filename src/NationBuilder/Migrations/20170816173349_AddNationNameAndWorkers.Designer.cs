@@ -8,9 +8,10 @@ using NationBuilder.Models;
 namespace NationBuilder.Migrations
 {
     [DbContext(typeof(NationBuilderContext))]
-    partial class NationBuilderContextModelSnapshot : ModelSnapshot
+    [Migration("20170816173349_AddNationNameAndWorkers")]
+    partial class AddNationNameAndWorkers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -209,7 +210,7 @@ namespace NationBuilder.Migrations
 
                     b.Property<int>("Population");
 
-                    b.Property<int>("Wealth");
+                    b.Property<string>("Weath");
 
                     b.Property<int>("Workers");
 

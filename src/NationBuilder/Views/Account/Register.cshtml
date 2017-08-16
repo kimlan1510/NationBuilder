@@ -2,26 +2,6 @@
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script type="text/javascript">
-    $(document).ready(function () {
-        console.log("test");
-        $('.Register').submit(function (event) {
-            console.log("button");
-            event.preventDefault();
-            $.ajax({
-                url: '/Account/Register',
-                type: 'POST',
-                dataType: 'json',
-                data: $(this).serialize(),
-                success: function (result) {
-                    var resultMessage = 'You\'ve added a new user to the database!'<br>'Email:' + result.Email;
-                $('#result6').html(resultMessage);
-                }
-            });
-        });
-    });
-
-</script>
 
 <h2>Register a new user</h2>
 <hr />
@@ -30,7 +10,10 @@
     <label for="Email">Email: </label>
     <input type="text" name="Email" />
     <label for="Password">Password: </label>
-    <input type="text" name="Password" />
+    <input type="Password" name="Password" />
     <button type="submit">Submit</button>
 </form>
-<div id="result6"></div>
+<div id="RegisterMessage">
+</div>
+<p class="ClickLogIn">Click here to login</p>
+<div id="LogInForm"></div>

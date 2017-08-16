@@ -12,11 +12,13 @@ namespace NationBuilder.Models
     {
         [Key]
         public int NationId { get; set; }
+        public string Name { get; set; }
         public string GovernmentType { get; set; }
         public string EconomyType { get; set; }
         public string Geography { get; set; }
-        public string Weath { get; set; }
+        public int Wealth { get; set; }
         public int Population { get; set; }
+        public int Workers { get; set; }
         public int Food { get; set; }
         public int Happiness { get; set; }
         public int MapId { get; set; }
@@ -26,6 +28,8 @@ namespace NationBuilder.Models
             this.Happiness = 70;
             this.Food = 2;
             this.Population = 2;
+            this.Workers = this.Population;
+            this.Wealth = 50;
         }
     }
 }

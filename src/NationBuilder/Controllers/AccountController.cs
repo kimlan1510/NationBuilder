@@ -22,7 +22,6 @@ namespace NationBuilder.Controllers
             _signInManager = signInManager;
             _db = db;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -47,18 +46,21 @@ namespace NationBuilder.Controllers
                 return View();
             }
         }
+
+        [Route("/Account/Login")]
         public IActionResult Login()
         {
             return View();
         }
 
+        [Route("/Account/Login")]
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Nation");
             }
             else
             {
