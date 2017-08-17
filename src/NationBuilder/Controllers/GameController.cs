@@ -25,14 +25,57 @@ namespace NationBuilder.Controllers
         }
         public IActionResult Index()
         {
-            Nation selectedNation = _db.Nations.LastOrDefault();
-            Map selectedMap = _db.Maps.FirstOrDefault(map => map.MapId == selectedNation.NationId);
-            ViewBag.SelectedMap = selectedMap;
-                
-            return View(selectedNation);
+            //Nation selectedNation = _db.Nations.LastOrDefault();
+            //Map selectedMap = _db.Maps.FirstOrDefault(map => map.MapId == selectedNation.NationId);
+            //ViewBag.SelectedMap = selectedMap;
+
+            return View();
         }
-        public IActionResult Gamestate()
+        [Route("/Game/MapGamestate")]
+        public IActionResult MapGamestate()
+        {
+            Map selectedMap = _db.Maps.LastOrDefault();
+            return Json(selectedMap);
+
+        }
+        [Route("/Game/NationGamestate")]
+        public IActionResult NationGamestate()
+        {
+            Nation selectedNation = _db.Nations.LastOrDefault();
+            var asd = Json(selectedNation);
+            return (asd);
+        }
+        [Route("/Game/AssignWorkerFood")]
+        public IActionResult AssignWorkerFood()
+        {
+            
+        }
+        [Route("/Game/RemoveWorkerFood")]
+        public IActionResult RemoveWorkerFood()
         {
 
         }
+        [Route("/Game/AssignWorkerResources")]
+        public IActionResult AssignWorkerResources()
+        {
+            Map thisMap = _db.Maps.LastOrDefault();
+            Nation thisNation = _db.Nations.LastOrDefault();
+            if(thisNation.Workers > 0)
+            {
+                thisNation.Workers -= 1;
+                thisNation.AssignedResourceWorkers += 1;
+            }
+        
+        }
+        [Route("/Game/RemoveWorkerResources")]
+        public IActionResult RemoveWorkerResources()
+        {
+
+        }
+        public int GetResouces(int worker)
+        {
+
+            return worker;
+        }
+    }
 }

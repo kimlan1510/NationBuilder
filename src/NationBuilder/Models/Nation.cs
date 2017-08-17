@@ -19,6 +19,8 @@ namespace NationBuilder.Models
         public int Wealth { get; set; }
         public int Population { get; set; }
         public int Workers { get; set; }
+        public int AssignedFoodWorkers { get; set; }
+        public int AssignedResourceWorkers { get; set; }
         public int Food { get; set; }
         public int Happiness { get; set; }
         public int MapId { get; set; }
@@ -30,6 +32,8 @@ namespace NationBuilder.Models
             this.Population = 2;
             this.Workers = this.Population;
             this.Wealth = 50;
+            this.AssignedFoodWorkers = 0;
+            this.AssignedResourceWorkers = 0;
         }
     }
 }

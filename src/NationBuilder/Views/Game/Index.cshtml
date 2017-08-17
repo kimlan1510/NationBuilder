@@ -2,15 +2,64 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model NationBuilder.Models.Nation
-<h3>Nation: @Html.DisplayFor(n => n.Name)</h3>
-<ul>
-    <li>Government Type: @Html.DisplayFor(n => n.GovernmentType)</li>
-    <li>Economy: @Html.DisplayFor(n => n.EconomyType)</li>
-    <li>Geography: @Html.DisplayFor(n => n.Geography)</li>
-    <li>Weath: @Html.DisplayFor(n => n.Wealth)</li>
-    <li>Population: @Html.DisplayFor(n => n.Population)</li>
-    <li>Workers: @Html.DisplayFor(n => n.Workers)</li>
-    <li>Food: @Html.DisplayFor(n => n.Food)</li>
-    <li>Happiness: @Html.DisplayFor(n => n.Happiness)</li>
-</ul>
+
+<h2>Your nation</h2>
+<h4 class="nation"></h4>
+<div id="GameNation"></div>
+
+<h2>World map</h2>
+<h4 class="map"></h4>
+<div id="GameMap"></div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4">
+            <img src="~/Images/iron.png" />
+        </div>
+
+        <div class="col-md-4">
+            <button id="ButtonMinusWood">-</button>
+            <button id="ButtonPlusWood">+</button>
+            <p id="WoodWorkers">number</p>
+            <img src="~/Images/wood.jpg" />
+        </div>
+
+        <div class="col-md-4">
+            <img src="~/Images/uranium.jpg" />
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <img src="~/Images/pig.JPG" />
+        </div>
+
+        <div class="col-md-4">
+            <img src="~/Images/town.jpg" />
+        </div>
+
+        <div class="col-md-4">
+            <img src="~/Images/aluminum.jpg" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/Images/cow.jpg" />
+        </div>
+
+        <div class="col-md-4">
+            <img src="~/Images/chickens.jpg" />
+        </div>
+
+        <div class="col-md-4">
+            <button id="ButtonMinusWeed">-</button>
+            <button id="ButtonPlusWeed">+</button>
+            <p id="WeeddWorkers">number</p>
+            <img src="~/Images/wheat.jpg" />
+        </div>
+    </div>
+
+</div>
